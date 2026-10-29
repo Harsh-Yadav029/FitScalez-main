@@ -112,12 +112,12 @@ export default function CareersPage() {
                 </section>
 
                 {/* Open Positions Grid */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 80px', padding: '0 40px' }}>
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto 80px' }}>
                     <h2 style={{ fontSize: '2.2rem', fontWeight: 900, marginBottom: '32px' }}>open positions</h2>
 
                     <div style={{ display: 'grid', gap: '28px' }}>
                         {OPEN_POSITIONS.map((job) => (
-                            <div key={job.id} style={{
+                            <div key={job.id} className="subpage-box-card" style={{
                                 background: '#fff',
                                 border: '2px solid #000',
                                 borderRadius: '20px',
@@ -173,12 +173,12 @@ export default function CareersPage() {
                 </section>
 
                 {/* Application Form */}
-                <section id="application-form" style={{ maxWidth: '880px', margin: '0 auto 100px', padding: '0 40px' }}>
-                    <div style={{
+                <section id="application-form" className="projects-grid-section" style={{ maxWidth: '880px', margin: '0 auto 100px' }}>
+                    <div className="subpage-box-card" style={{
                         background: '#fff',
                         border: '3px solid #000',
                         borderRadius: '24px',
-                        padding: '48px 40px',
+                        padding: '44px 36px',
                         boxShadow: '10px 10px 0px #000'
                     }}>
                         <div className="subpage-badge" style={{ background: 'var(--color-pink)', color: '#000' }}>quick application</div>

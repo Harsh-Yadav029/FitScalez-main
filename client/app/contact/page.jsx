@@ -84,19 +84,19 @@ export default function ContactPage() {
                     </p>
                 </section>
 
-                <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 40px 100px' }}>
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto', paddingBottom: '100px' }}>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '50px',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                        gap: '36px',
                         alignItems: 'start'
                     }}>
                         {/* Contact Form Card */}
-                        <div style={{
+                        <div className="subpage-box-card" style={{
                             background: '#fff',
                             border: '3px solid #000',
                             borderRadius: '24px',
-                            padding: '40px',
+                            padding: '36px 30px',
                             boxShadow: '10px 10px 0px #000'
                         }}>
                             {status.submitted ? (
@@ -242,7 +242,7 @@ export default function ContactPage() {
 
                         {/* Direct Contact & Delhi Info */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                            <div style={{
+                            <div className="subpage-box-card" style={{
                                 background: 'var(--color-pink)',
                                 border: '3px solid #000',
                                 borderRadius: '24px',
@@ -274,7 +274,7 @@ export default function ContactPage() {
                                 </a>
                             </div>
 
-                            <div style={{
+                            <div className="subpage-box-card" style={{
                                 background: '#fff',
                                 border: '3px solid #000',
                                 borderRadius: '24px',

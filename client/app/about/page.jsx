@@ -65,9 +65,9 @@ export default function AboutPage() {
                     {/* Metrics Banner */}
                     <div className="about-stats-grid" style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                        gap: '24px',
-                        margin: '50px 0'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+                        gap: '20px',
+                        margin: '40px 0'
                     }}>
                         {MILESTONES.map((m) => (
                             <div key={m.label} style={{
@@ -85,12 +85,12 @@ export default function AboutPage() {
                 </section>
 
                 {/* Agency Story Section */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 80px', padding: '0 40px' }}>
-                    <div style={{
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto 80px' }}>
+                    <div className="subpage-box-card" style={{
                         background: '#fff',
                         border: '3px solid #000',
                         borderRadius: '24px',
-                        padding: '50px 40px',
+                        padding: '44px 36px',
                         boxShadow: '8px 8px 0px #000'
                     }}>
                         <h2 style={{ fontSize: '2.4rem', fontWeight: 900, marginBottom: '20px' }}>
@@ -134,15 +134,15 @@ export default function AboutPage() {
                 </section>
 
                 {/* Leadership Section */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 100px', padding: '0 40px' }}>
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto 100px' }}>
                     <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '40px', textAlign: 'center' }}>
                         meet the leadership team
                     </h2>
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                        gap: '24px'
                     }}>
                         {LEADERSHIP_TEAM.map((member) => (
                             <div key={member.name} style={{

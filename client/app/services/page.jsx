@@ -33,11 +33,11 @@ export default function ServicesPage() {
                 </section>
 
                 {/* Service Cards Grid */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 40px 80px' }}>
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto', paddingBottom: '80px' }}>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                        gap: '24px',
                         marginBottom: '80px'
                     }}>
                         {CARDS_DATA.map((card) => (
@@ -108,9 +108,9 @@ export default function ServicesPage() {
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px',
-                        marginBottom: '100px'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                        gap: '24px',
+                        marginBottom: '80px'
                     }}>
                         {PRICING_PACKAGES.map((pkg) => (
                             <div

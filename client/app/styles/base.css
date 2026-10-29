@@ -54,19 +54,22 @@ object {
 }
 
 /* ─── Base Elements ──────────────────────────────────────────────────────────── */
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 body {
     background-color: var(--bg-color);
     font-family: 'Epilogue', sans-serif;
     color: var(--color-dark);
+    max-width: 100vw;
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
     cursor: url("/assets/Cursor SVG/cursor-default.svg") 2 0, auto;
-}
-
-html {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar,

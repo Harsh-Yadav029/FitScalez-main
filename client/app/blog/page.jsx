@@ -77,11 +77,11 @@ export default function BlogPage() {
                 </section>
 
                 {/* Articles Grid */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 100px', padding: '0 40px' }}>
+                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto 100px' }}>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                        gap: '32px'
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
+                        gap: '24px'
                     }}>
                         {filteredArticles.map((article) => (
                             <article key={article.slug} style={{
