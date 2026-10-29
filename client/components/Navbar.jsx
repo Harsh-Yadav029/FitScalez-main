@@ -516,8 +516,11 @@ export default function Navbar() {
                 </div>
 
                 <div className="nav-fullscreen-footer">
-                    <div>&copy; {new Date().getFullYear()} Fitscalez Agency. All rights reserved.</div>
-                    <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+                    <div>&copy; 2024 Fitscalez. All rights reserved.</div>
+                    <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <a href="/privacy-policy" onClick={closeMenu} style={{ opacity: 0.75, fontSize: '0.85rem' }}>Privacy Policy</a>
+                        <a href="/terms-of-service" onClick={closeMenu} style={{ opacity: 0.75, fontSize: '0.85rem' }}>Terms</a>
+                        <a href="/sitemap" onClick={closeMenu} style={{ opacity: 0.75, fontSize: '0.85rem' }}>Sitemap</a>
                         <a href="https://www.linkedin.com/company/fitscalez" target="_blank" rel="noreferrer">LinkedIn ↗</a>
                         <a href="https://www.instagram.com/fitscalez" target="_blank" rel="noreferrer">Instagram ↗</a>
                         <a href="/admin/login" onClick={closeMenu} style={{ opacity: 0.5 }}>Admin Access 🔒</a>

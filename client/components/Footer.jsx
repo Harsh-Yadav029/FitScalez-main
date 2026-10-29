@@ -224,10 +224,16 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Bottom row: credits */}
+                {/* Bottom row: credits & legal */}
                 <div className="footer-bottom-row">
-                    <div>
-                        <span style={{ fontSize: '0.82rem', opacity: 0.7 }}>&copy; {new Date().getFullYear()} Fitscalez Agency. All rights reserved.</span>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '14px', pointerEvents: 'auto', marginBottom: '-8px' }}>
+                        <span style={{ fontSize: '0.82rem', opacity: 0.85, fontWeight: 500 }}>&copy; 2024 Fitscalez. All rights reserved.</span>
+                        <span style={{ opacity: 0.35 }}>•</span>
+                        <a href="/privacy-policy" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Privacy Policy</a>
+                        <span style={{ opacity: 0.35 }}>•</span>
+                        <a href="/terms-of-service" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Terms of Service</a>
+                        <span style={{ opacity: 0.35 }}>•</span>
+                        <a href="/sitemap" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Sitemap</a>
                     </div>
                     <div className="footer-credits-wrapper">
                         <div className="credits-box">
