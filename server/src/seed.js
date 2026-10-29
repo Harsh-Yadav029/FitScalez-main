@@ -6,7 +6,10 @@ import { User } from "./models/user.model.js";
 import fs from "fs";
 import path from "path";
 
-dotenv.config({ path: "./.env" });
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const seedDatabase = async () => {
     try {

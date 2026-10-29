@@ -1,10 +1,14 @@
 import dotenv from "dotenv";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
 
-// configure dotenv
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// configure dotenv to load server/.env regardless of current working directory
 dotenv.config({
-    path: "./.env"
+    path: path.resolve(__dirname, "../.env")
 });
 
 const PORT = process.env.PORT || 8000;
@@ -17,9 +21,8 @@ connectDB()
         });
     })
     .catch((err) => {
-        console.error("MongoDB connection failed! Starting server in offline/degraded mode...", err);
+        console.error("MongoDB connection failed! Starting server in offline/degraded mode...", err.message || err);
         app.listen(PORT, () => {
             console.log(`⚙️  Fitscalez Server running (degraded mode) at http://localhost:${PORT}`);
         });
     });
-
