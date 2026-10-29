@@ -26,9 +26,15 @@ const seedDatabase = async () => {
             console.log("ℹ️ Admin user already exists");
         }
 
-        // 2. Seed Articles if articles_data.json is found
-        const articlesPath = path.resolve("../scratch/fitscalez/fitscalez-main/articles_data.json");
-        if (fs.existsSync(articlesPath)) {
+        // 2. Seed Articles if articles.json is found
+        const possiblePaths = [
+            path.resolve("../client/lib/articles.json"),
+            path.resolve("../lib/articles.json"),
+            path.resolve("./articles.json"),
+            path.resolve("../scratch/fitscalez/fitscalez-main/articles_data.json")
+        ];
+        const articlesPath = possiblePaths.find((p) => fs.existsSync(p));
+        if (articlesPath) {
             const rawData = fs.readFileSync(articlesPath, "utf-8");
             const articles = JSON.parse(rawData);
 

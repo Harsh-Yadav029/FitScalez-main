@@ -1,7 +1,11 @@
 // ─── lib/api.js — Native fetch client for Fitscalez backend ───────────────────
 // Centralized, lightweight HTTP client using the native Fetch API
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const rawBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+// Normalize base URL so trailing slash or missing /api/v1 doesn't break endpoints
+const API_BASE_URL = rawBase.endsWith("/api/v1")
+    ? rawBase
+    : `${rawBase.replace(/\/+$/, "")}/api/v1`;
 
 /**
  * Core fetch wrapper with credentials (for HttpOnly JWT cookies) and JSON handling

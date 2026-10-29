@@ -1,18 +1,14 @@
 {
-  "name": "fitscalez-main",
-  "version": "0.1.0",
+  "name": "fitscalez-workspace",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "gsap": "^3.12.5",
-    "lenis": "^1.1.14",
-    "next": "15.2.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dev": "npm run dev --prefix client",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix client",
+    "start:server": "npm run start --prefix server",
+    "seed": "npm run seed --prefix server"
   }
 }

@@ -24,3 +24,4 @@ services:
         generateValue: true
       - key: REFRESH_TOKEN_EXPIRY
         value: 10d
+
