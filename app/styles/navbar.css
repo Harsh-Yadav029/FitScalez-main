@@ -1,0 +1,620 @@
+/* ─── Navbar & Header ───────────────────────────────────────────────────────── */
+.main-header {
+    width: 100%;
+}
+
+.logo-work-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 55px;
+}
+
+.nav-bar__work-blob-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo-work-text {
+    position: relative;
+    z-index: 2;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    margin-left: 60px;
+    color: inherit;
+    letter-spacing: -0.5px;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    z-index: 1000;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.on-dark {
+    color: var(--bg-color);
+}
+
+.navbar.on-light {
+    color: var(--color-dark);
+}
+
+.logo-truus {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+
+.logo-truus path,
+.nav-bar__whatsapp-svg path {
+    fill: currentColor;
+    transition: fill 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-bar__whatsapp-svg {
+    width: 32px;
+    height: auto;
+    display: block;
+    color: inherit;
+}
+
+
+/* VimeoHero sits directly inside main-header — no extra wrapper needed */
+.main-header {
+    width: 100%;
+    position: relative;
+}
+
+/* ─── Full-screen dark overlay when navbar popout is open ─── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 99;
+    /* Just below the popout (z-index: 100) */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-hover-trigger {
+    position: relative;
+}
+
+.nav-popout {
+    position: absolute;
+    background: var(--bg-color);
+    /* Off-white beige from image */
+    color: var(--color-dark);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.nav-popout-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-hover-trigger:hover .nav-popout {
+    pointer-events: auto;
+}
+
+/* Base text styling */
+.nav-popout h4,
+.nav-popout p,
+.nav-popout a {
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+}
+
+/* --- Left Popout (Work) --- */
+.nav-left .nav-popout {
+    top: 8px;
+    left: -8px;
+    width: 320px;
+    height: 500px;
+}
+
+.nav-left .nav-popout-inner {
+    width: 100%;
+    height: 100%;
+    padding: 100px 24px 24px 24px;
+    /* Space for the Work logo at the top */
+    gap: 20px;
+}
+
+.nav-left .logo-work-container {
+    position: relative;
+    z-index: 105;
+    /* Keeps logo ABOVE the popout background */
+}
+
+/* Force text dark when hovering, since popout bg is light */
+.nav-left:hover .logo-work-text {
+    color: var(--color-dark) !important;
+}
+
+/* The work items layout */
+.nav-work-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+/* Image clip wrapper — tilt stays inside bounds */
+.nav-work-item__img-wrap {
+    width: 75px;
+    height: 75px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.nav-work-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-work-item__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.nav-work-badge {
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border-bottom-left-radius: 1px;
+    width: fit-content;
+}
+
+.badge-maroon {
+    background-color: #B1536E;
+    /* Deep maroon/pink */
+    color: var(--color-dark);
+}
+
+.badge-pink {
+    background-color: #EBB6F4;
+    /* Light pink */
+    color: var(--color-dark);
+}
+
+.nav-work-title {
+    margin-top: 50px;
+    font-size: 1.3rem;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.nav-work-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+    margin-top: 10rem;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+/* --- Right Popout (WhatsApp) --- */
+.nav-right .nav-popout {
+    top: 8px;
+    right: -8px;
+}
+
+.nav-right .nav-popout-inner {
+    width: 320px;
+    padding: 100px 24px 24px 24px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.nav-right .logo-whatsapp {
+    position: relative;
+    z-index: 105;
+}
+
+
+.nav-wa-qr {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -60px;
+    border-radius: 0px;
+    object-fit: cover;
+}
+
+.nav-wa-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    margin-top: -40px;
+}
+
+.nav-wa-desc {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.35;
+    opacity: 1;
+    margin-bottom: 28px;
+    /* Large gap to the link */
+}
+
+.nav-wa-link {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    padding-bottom: 18px;
+    /* Room for the two SVG lines below */
+}
+
+.nav-wa-link-text {
+    z-index: 2;
+}
+
+.nav-wa-link-svg {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    /* Taller to fit both paths */
+}
+
+.nav-wa-link-svg path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 0.5s ease-out;
+}
+
+.nav-hover-trigger:hover .nav-wa-link-svg path {
+    stroke-dashoffset: 0;
+    transition-delay: 0.15s;
+}
+
+
+/* ─── Nav Right Container & Menu Button ─── */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: lowercase;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+}
+
+.navbar.on-dark .nav-menu-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.navbar.on-dark .nav-menu-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.navbar.on-light .nav-menu-btn {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1.5px solid #000;
+    color: #000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar.on-light .nav-menu-btn:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0px var(--color-pink);
+}
+
+.nav-menu-btn__icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 14px;
+}
+
+.nav-menu-btn__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease;
+}
+
+/* ─── Full-screen Menu Drawer (Option B) ─── */
+.nav-fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0d0e12;
+    color: #fcfbf7;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 60px 40px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    overflow-y: auto;
+}
+
+.nav-fullscreen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-fullscreen-logo {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-fullscreen-close {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    transition: all 0.25s ease;
+}
+
+.nav-fullscreen-close:hover {
+    background: var(--color-pink);
+    color: #000;
+    border-color: var(--color-pink);
+    transform: scale(1.05);
+}
+
+.nav-fullscreen-body {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+    padding: 40px 0;
+    flex: 1;
+}
+
+.nav-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.nav-menu-link-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    width: fit-content;
+}
+
+.nav-menu-link-item:hover {
+    transform: translateX(18px);
+    color: var(--color-pink);
+}
+
+.nav-menu-num {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+.nav-menu-text {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    text-transform: lowercase;
+}
+
+.nav-menu-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-menu-link-item:hover .nav-menu-tag {
+    background: var(--color-pink);
+    color: #000;
+}
+
+.nav-fullscreen-sidebar {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nav-sidebar-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-orange);
+}
+
+.nav-sidebar-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-top: -12px;
+}
+
+.nav-sidebar-info p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.nav-sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.nav-sidebar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-sidebar-btn--primary {
+    background: var(--color-lightgreen);
+    color: #000;
+}
+
+.nav-sidebar-btn--primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.nav-sidebar-btn--outline {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.nav-sidebar-btn--outline:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-fullscreen-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #777;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.nav-fullscreen-footer a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-fullscreen-footer a:hover {
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .nav-fullscreen-menu {
+        padding: 24px;
+    }
+    .nav-fullscreen-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .nav-fullscreen-sidebar {
+        display: none;
+    }
+    .nav-menu-text {
+        font-size: 2.2rem;
+    }
+}
