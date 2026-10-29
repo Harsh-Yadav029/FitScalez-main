@@ -84,19 +84,19 @@ export default function ContactPage() {
                     </p>
                 </section>
 
-                <section className="projects-grid-section" style={{ maxWidth: '1280px', margin: '0 auto', paddingBottom: '100px' }}>
+                <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 40px 100px' }}>
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-                        gap: '36px',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                        gap: '50px',
                         alignItems: 'start'
                     }}>
                         {/* Contact Form Card */}
-                        <div className="subpage-box-card" style={{
+                        <div style={{
                             background: '#fff',
                             border: '3px solid #000',
                             borderRadius: '24px',
-                            padding: '36px 30px',
+                            padding: '40px',
                             boxShadow: '10px 10px 0px #000'
                         }}>
                             {status.submitted ? (
@@ -242,7 +242,7 @@ export default function ContactPage() {
 
                         {/* Direct Contact & Delhi Info */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                            <div className="subpage-box-card" style={{
+                            <div style={{
                                 background: 'var(--color-pink)',
                                 border: '3px solid #000',
                                 borderRadius: '24px',
@@ -274,7 +274,7 @@ export default function ContactPage() {
                                 </a>
                             </div>
 
-                            <div className="subpage-box-card" style={{
+                            <div style={{
                                 background: '#fff',
                                 border: '3px solid #000',
                                 borderRadius: '24px',

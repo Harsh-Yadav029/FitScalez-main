@@ -273,9 +273,6 @@
 }
 
 @media (max-width: 768px) {
-    .subpage-container {
-        padding-top: 86px;
-    }
     .subpage-hero,
     .projects-grid-section {
         padding-left: 20px;
@@ -283,53 +280,10 @@
     }
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
     }
     .project-cta-banner {
         margin: 20px 20px 80px;
-        padding: 36px 20px;
-    }
-    .filter-pills {
-        gap: 8px;
-        margin-bottom: 30px;
-    }
-    .filter-pill {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
-    .subpage-box-card {
-        padding: 24px 18px !important;
-        border-radius: 18px !important;
-    }
-}
-
-/* ─── Legal & Documentation Pages ─── */
-.legal-content-section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 40px 100px;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    color: #222;
-}
-
-.legal-box {
-    background: #fff;
-    border: 3px solid #000;
-    border-radius: 24px;
-    padding: 40px 36px;
-    margin-bottom: 32px;
-}
-
-@media (max-width: 768px) {
-    .legal-content-section {
-        padding: 0 20px 80px;
-        font-size: 1rem;
-    }
-    .legal-box {
-        padding: 24px 18px;
-        border-radius: 18px;
-        margin-bottom: 22px;
+        padding: 40px 20px;
     }
 }
 

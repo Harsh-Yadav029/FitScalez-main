@@ -18,6 +18,18 @@ export const AGENCY_INFO = {
     tagline: "an agency built for the future. from MERN to Marketing."
 };
 
+// Trusted client brands & businesses across India
+export const TRUSTED_CLIENTS = [
+    { name: "Walk The Plan", icon: "📐" },
+    { name: "House of Symmetry", icon: "🏛️" },
+    { name: "TechStartup India", icon: "⚡" },
+    { name: "GreenLeaf Organics", icon: "🌿" },
+    { name: "QuickShop Delhi", icon: "🏪" },
+    { name: "MedCare Solutions", icon: "💊" },
+    { name: "BuildRight Infra", icon: "🏗️" },
+    { name: "EduPrime Academy", icon: "🎓" }
+];
+
 // Marquee brand & partner logos
 export const brands = [
     { name: "netflix", src: "/assets/Brand Logos SVG/netflix_logo.svg" },

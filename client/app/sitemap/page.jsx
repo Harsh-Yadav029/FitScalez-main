@@ -31,10 +31,10 @@ export default function SitemapPage() {
                     </p>
                 </section>
 
-                <section className="legal-content-section" style={{ maxWidth: '1100px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px', marginBottom: '40px' }}>
+                <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 40px 100px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '50px' }}>
                         {/* Main Pages */}
-                        <div className="subpage-box-card" style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '36px 30px' }}>
+                        <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '36px 30px' }}>
                             <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '20px', borderBottom: '2px solid #000', paddingBottom: '10px' }}>
                                 🧭 Primary Navigation
                             </h2>

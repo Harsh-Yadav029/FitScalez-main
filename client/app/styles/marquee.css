@@ -236,3 +236,106 @@
     height: auto;
     object-fit: contain;
 }
+
+/* ─── Horizontal Trusted Clients Marquee ─────────────────────────────────── */
+.trusted-marquee-section {
+    padding: 38px 0 36px;
+    background: #090a10;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.trusted-marquee-label {
+    text-align: center;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8b949e;
+    margin-bottom: 22px;
+    padding: 0 20px;
+    user-select: none;
+}
+
+.trusted-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.trusted-marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: trustedMarqueeScroll 32s linear infinite;
+    will-change: transform;
+}
+
+.trusted-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.trusted-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e4e4e7;
+    white-space: nowrap;
+    cursor: default;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.trusted-marquee-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+.trusted-marquee-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.trusted-marquee-name {
+    letter-spacing: 0.2px;
+}
+
+@keyframes trustedMarqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333333%);
+    }
+}
+
+@media (max-width: 768px) {
+    .trusted-marquee-section {
+        padding: 28px 0 26px;
+    }
+
+    .trusted-marquee-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 16px;
+    }
+
+    .trusted-marquee-item {
+        padding: 8px 18px;
+        font-size: 0.84rem;
+        gap: 8px;
+    }
+}
