@@ -13,6 +13,9 @@ import blogRouter from "./routes/blog.routes.js";
 
 const app = express();
 
+// Trust reverse proxy (essential for Render / Heroku / Vercel SSL termination & secure cookies)
+app.set("trust proxy", 1);
+
 const allowedOrigins = process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(",").map(o => o.trim())
     : ["http://localhost:3000"];
@@ -21,7 +24,12 @@ app.use(
     cors({
         origin: function (origin, callback) {
             // allow requests with no origin (like mobile apps, curl, server-to-server)
-            if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes("*")) {
+            if (
+                !origin ||
+                allowedOrigins.includes(origin) ||
+                allowedOrigins.includes("*") ||
+                (typeof origin === "string" && origin.endsWith(".vercel.app"))
+            ) {
                 callback(null, true);
             } else {
                 callback(null, origin); // lenient fallback for production previews
