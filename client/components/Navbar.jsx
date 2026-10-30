@@ -120,13 +120,8 @@ export default function Navbar() {
             const serviceCardsSection = document.querySelector('.service-cards-wrapper');
             const serviceCardsTop = serviceCardsSection ? serviceCardsSection.getBoundingClientRect().top + window.scrollY : Infinity;
 
-            const doubleMarquee = document.querySelector('.Double-marquee');
-            const doubleMarqueeTop = doubleMarquee ? doubleMarquee.getBoundingClientRect().top + window.scrollY : Infinity;
-
             if (scrollPos >= footerTop) {
                 navbar.classList.add('on-dark'); navbar.classList.remove('on-light');
-            } else if (scrollPos >= doubleMarqueeTop) {
-                navbar.classList.add('on-light'); navbar.classList.remove('on-dark');
             } else if (scrollPos >= serviceCardsTop) {
                 navbar.classList.add('on-light'); navbar.classList.remove('on-dark');
             } else if (scrollPos >= showreelTop) {
