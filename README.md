@@ -1,4 +1,4 @@
-# Fitscalez — Full-Stack Agency Platform & Awwward-Winning Web Experience
+# Fitscalez — Full-Stack Agency Platform 
 
 > **An agency built for the future. From MERN to Marketing.**  
 > A high-performance digital agency platform combining an Awwward-caliber motion-designed frontend with an enterprise-ready Express + MongoDB backend, Lead Management CRM, Live Visitor Analytics, Career Applications, and a 14-Article SEO Knowledge Base.
