@@ -43,3 +43,4 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 * `/privacy-policy` & `/terms-of-service` — Complete legal policies
 * `/sitemap` & `/sitemap.xml` — Visual and search engine sitemaps
 * `/admin/login` & `/admin/dashboard` — Authenticated CRM dashboard
+

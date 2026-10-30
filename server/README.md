@@ -45,3 +45,4 @@ REFRESH_TOKEN_EXPIRY=10d
 * `/api/v1/analytics` — Visitor tracking (`POST /track`, `GET /stats`)
 * `/api/v1/applications` — Career submissions (`POST /`, `GET /`)
 * `/api/v1/blogs` — Articles (`GET /`, `GET /:slug`)
+
