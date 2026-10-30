@@ -1,262 +1,247 @@
-# Truus.co — Awwward-Winning Web Design Clone
+# Fitscalez — Full-Stack Agency Platform & Awwward-Winning Web Experience
 
-A highly interactive, visually stunning recreation of the **Truus.co** website, rebuilt as a **Next.js + React** application. This project captures the bold aesthetics, playful interactivity, and smooth motion design characteristic of Awwward-winning websites — with every pixel and every frame of animation faithfully recreated.
-
-<table>
-  <tr>
-    <td align="center"><b>Header Section</b><br/><img width="100%" alt="Header Section" src="https://github.com/user-attachments/assets/195d1543-3e28-4678-8545-567ca9b08767" /></td>
-    <td align="center"><b>HorizontalWords Section</b><br/><img width="100%" alt="HorizontalWords Section placeholder" src="https://github.com/user-attachments/assets/fd76c800-fe37-48a3-a5bc-728aa5cdf5ef" /></td>
-
-  </tr>
-  <tr>
-    <td align="center"><b>MotionCard Section</b><br/><img width="100%" alt="MotionCard Section placeholder" src="https://github.com/user-attachments/assets/14d46fcf-f5d4-4b32-ac8e-e99eef1e964f" /></td>
-    <td align="center"><b>Service Card Section</b><br/><img width="100%" alt="Service Card Section" src="https://github.com/user-attachments/assets/cb80f406-998e-4853-9ea5-7dec87952117" /></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Double Marquee Section</b><br/><img width="100%" alt="Double marquee section" src="https://github.com/user-attachments/assets/9ca5af12-5e0b-4b81-954c-1dcb484c671a" /></td>
-    <td align="center"><b>Footer Section</b><br/><img width="100%" alt="Footer section" src="https://github.com/user-attachments/assets/1f0c8b9c-50c7-452e-af4c-23cadcdb58c0" /></td>
-  </tr>
-</table>
-
+> **An agency built for the future. From MERN to Marketing.**  
+> A high-performance digital agency platform combining an Awwward-caliber motion-designed frontend with an enterprise-ready Express + MongoDB backend, Lead Management CRM, Live Visitor Analytics, Career Applications, and a 14-Article SEO Knowledge Base.
 
 ---
 
-## 🚀 Overview
+## ⚡ Overview
 
-This project is a high-fidelity clone of the Truus advertising agency website. The codebase was originally built in vanilla HTML/CSS/JS and has been **fully transformed to Next.js 15 + React 19**, with all animations, interactions, and assets ported 1:1.
+**Fitscalez** is a full-stack digital agency based in Civil Lines, Delhi, India, delivering bespoke MERN Stack web platforms, Technical SEO dominance, and high-ROI performance marketing. 
 
-### ⚠️ Note on the Hero Video
-The original Truus.co website uses a privately-hosted Vimeo video. Due to **Vimeo's Domain-Level Privacy Settings**, the video is restricted to the `truus.co` domain. The hero component uses a standard HTML5 `<video>` element with the `src` commented out, rendering a solid dark background. Place your `.mp4` in `public/` and update the source in `VimeoHero.jsx`.
-
----
-
-## ✨ Key Features
-
-### 🎭 Animations & Effects
-
-- **GSAP InertiaPlugin Fling** — Motion cards and floating labels track mouse velocity; on `mouseleave` they fling with physics-based inertia and snap back to position.
-- **Page Transition Scribble** — Full-screen GSAP-powered scribble mask that draws/undraws on logo click, with random color selection, logo wiggle, and auto-scroll to top.
-- **Elastic Card Interactions** — Service cards spread apart horizontally on hover with elastic bounce physics; hovered card scales up. On mobile, cards stack and reveal via scroll.
-- **Scroll-Triggered SVG Draws** — Hand-drawn underlines and paths animate in via `stroke-dasharray` as the user scrolls past.
-- **Footer Sticker Proximity Push** — Stickers react to fast cursor swipes nearby with strength proportional to speed, then spring back elastically.
-- **Wiggle System** — Configurable per-element rotation wiggle on hover, controlled from a single `WIGGLE_CONFIG` object.
-- **Custom Cursor Bubble** — GSAP-tracked blob that follows the cursor, pops in elastically over clickable elements with context-aware text.
-- **Mute Bubble** — Separate cursor-following blob on the video hero with mute/unmute states.
-- **Double Marquee** — Infinite scrolling brand logos with smart randomization (no adjacent duplicates for logos or colors, even at the loop seam).
-- **Credits Pop-out** — Footer credits box physically grows/shrinks with staggered text slide animations.
-- **Lenis Smooth Scroll** — Buttery-smooth page scrolling synced with GSAP's ticker.
-- **Horizontal Scroll & Letter Bounce** — Pinned section that scrolls letters horizontally across the screen with random elastic bounces for letters and stickers as they enter the viewport.
-- **Tab Title Change** — Title becomes `"Hey, over here! 👋"` when the tab loses focus.
-
-### 🏗️ Architecture
-
-- **React Component Architecture** — Every section is a clean, isolated component.
-- **Modular CSS** — 11 partial stylesheets imported via a single `globals.css` entry point.
-- **External SVG Assets** — Decorative SVGs extracted to organized folders for clean, readable components.
-- **Centralized Data** — All static data (brands, cards, icons, configs) exported from `lib/data.js`.
-- **Self-Hosted Assets** — All fonts, brand logos, stickers, and SVGs stored locally — zero CDN dependency.
+The codebase is organized as a clean **monorepo**:
+* **`client/`**: Next.js 15 + React 19 frontend with advanced GSAP physics, Lenis smooth scrolling, and custom modular CSS.
+* **`server/`**: Standalone Express 4 + MongoDB (Mongoose) REST API with JWT authentication via secure `HttpOnly` cookies, CORS origin filtering, and reverse proxy trust.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **Next.js 15** | React framework, App Router, file-based routing |
-| **React 19** | Component-based UI architecture |
-| **Vanilla CSS** | Full design system via CSS Variables — zero Tailwind |
-| **GSAP + ScrollTrigger + InertiaPlugin** | All animations, scroll-driven effects, physics-based fling |
-| **Lenis** | Ultra-smooth inertia scrolling |
+| Layer | Technology | Details |
+|---|---|---|
+| **Frontend Framework** | **Next.js 15.2.8** | App Router, React 19.0.0, dynamic routing, static site generation |
+| **Animation Engine** | **GSAP 3.12.5** | ScrollTrigger, InertiaPlugin, quickTo mouse tracking, elastic easings |
+| **Smooth Scrolling** | **Lenis 1.1.14** | Physics-based inertia scroll synchronized with GSAP ticker |
+| **Styling** | **Vanilla CSS Variables** | 12+ modular partial stylesheets; zero Tailwind lock-in |
+| **Backend Runtime** | **Node.js (ESM)** | Express 4.21.2 (`"type": "module"`) |
+| **Database & ODM** | **MongoDB & Mongoose 8.9.5** | Indexed schemas, automated pre-save password hashing, fallback degraded mode |
+| **Authentication** | **JWT & bcryptjs** | Short-lived Access Tokens + long-lived Refresh Tokens in `HttpOnly` cookies |
+| **Client HTTP** | **Native Fetch API** | Lightweight client in `client/lib/api.js` with credentials support |
 
 ---
 
-## 📦 Project Structure
+## 📁 Monorepo Structure
 
 ```text
-truus/
-├── app/
-│   ├── styles/                  # Modular CSS partials
-│   │   ├── base.css             # Fonts, CSS variables, reset, body/html
-│   │   ├── navbar.css           # Navbar, logos, header hero
-│   │   ├── hero.css             # Content section title + underline SVG
-│   │   ├── vimeo-hero.css       # Vimeo hero video player + headline
-│   │   ├── motion-cards.css     # MotionCard section (heading + cards + labels)
-│   │   ├── showreel.css         # Showreel section placeholder
-│   │   ├── cards.css            # Service cards, stickers
-│   │   ├── marquee.css          # Double marquee section + animations
-│   │   ├── footer.css           # Footer layout, credits, stickers
-│   │   ├── cursor.css           # Custom cursor bubble + scribble overlay
-│   │   ├── horizontal-words.css # Horizontal scrolling section styles
-│   │   └── responsive.css       # All media queries (tablet + mobile)
-│   ├── globals.css              # Entry point — imports all partials
-│   ├── layout.jsx               # Root layout — <html>, metadata, favicon
-│   └── page.jsx                 # Main page — assembles all components
+FitScalez-main/
+├── client/                              # ─── Frontend Next.js Application ───
+│   ├── app/
+│   │   ├── page.jsx                     # Homepage assembling all interactive sections
+│   │   ├── layout.jsx                   # Root layout, metadata & fonts
+│   │   ├── globals.css                  # Master CSS entry point
+│   │   ├── about/page.jsx               # Agency story, leadership team, milestones
+│   │   ├── services/page.jsx            # Core capabilities & 3 pricing packages
+│   │   ├── projects/page.jsx            # Filterable case study portfolio
+│   │   ├── blog/
+│   │   │   ├── page.jsx                 # Searchable 14-article knowledge base
+│   │   │   └── [slug]/page.jsx          # Dynamic reading page with Table of Contents
+│   │   ├── careers/page.jsx             # Job listings & application form
+│   │   ├── contact/page.jsx             # Lead capture form with budget range selector
+│   │   ├── privacy-policy/page.jsx      # DPDP Act & GDPR compliant privacy policy
+│   │   ├── terms-of-service/page.jsx    # Service agreement & legal terms
+│   │   ├── sitemap/page.jsx             # Visual HTML sitemap
+│   │   ├── sitemap.js                   # Dynamic /sitemap.xml metadata generator
+│   │   ├── admin/
+│   │   │   ├── login/page.jsx           # Secure admin sign-in
+│   │   │   └── dashboard/page.jsx       # CRM lead manager, status updates & analytics
+│   │   └── styles/                      # 12 Modular CSS partials
+│   ├── components/                      # Reusable React & GSAP components
+│   │   ├── Navbar.jsx                   # Sticky navbar, theme transitions & full-screen menu
+│   │   ├── VimeoHero.jsx                # Video hero, sound-toggle mute bubble & headline
+│   │   ├── TrustedClientsMarquee.jsx    # Continuous horizontal ticker of Indian client brands
+│   │   ├── HorizontalWords.jsx          # Pinned scroll with character & sticker elastic bounce
+│   │   ├── MotionCards.jsx              # GSAP InertiaPlugin mouse fling & snap-back cards
+│   │   ├── Showreel.jsx                 # Video production showcase placeholder
+│   │   ├── ServiceCards.jsx             # Horizontal fan-out accordion cards on hover
+│   │   ├── Footer.jsx                   # Cursor proximity push stickers, credits & legal links
+│   │   ├── CursorBubble.jsx             # Custom context-aware GSAP cursor follower
+│   │   ├── SmoothScroll.jsx             # Lenis initialization & tab title toggle
+│   │   ├── SvgSymbols.jsx               # Shared SVG symbols
+│   │   └── TransitionScribble.jsx       # Fullscreen GSAP SVG scribble mask transition
+│   ├── lib/
+│   │   ├── api.js                       # Centralized fetch API client
+│   │   ├── articles.json                # 14 complete technical guides & articles
+│   │   └── data.js                      # Agency info, case studies, pricing & configs
+│   ├── public/                          # Brand logos, stickers, cursors & variable fonts
+│   ├── jsconfig.json                    # @/* path mapping
+│   ├── next.config.mjs                  # Next.js build configuration
+│   └── package.json                     # Frontend dependencies
 │
-├── components/
-│   ├── CursorBubble.jsx         # Custom "click" cursor bubble with GSAP tracking
-│   ├── DoubleMarquee.jsx        # Randomised logo marquee + scroll-triggered SVGs
-│   ├── Footer.jsx               # Footer — credits, stickers, socials, wiggles
-│   ├── HorizontalWords.jsx      # Pinned section with elastic letter bounce
-│   ├── MotionCards.jsx          # Motion cards + floating labels + InertiaPlugin fling
-│   ├── Navbar.jsx               # Fixed navbar + scroll color logic + logo wiggle
-│   ├── ServiceCards.jsx         # "Call us if you need" + 5 service cards
-│   ├── Showreel.jsx             # Showreel section placeholder (coming soon)
-│   ├── SmoothScroll.jsx         # Lenis init + GSAP ticker sync (renders null)
-│   ├── SvgSymbols.jsx           # Hidden SVG <symbol> defs (bullet, card divider)
-│   ├── TransitionScribble.jsx   # Full-screen scribble mask on logo click
-│   └── VimeoHero.jsx            # Video hero — controls, mute bubble, headline
+├── server/                              # ─── Backend Express + MongoDB API ───
+│   ├── src/
+│   │   ├── controllers/                 # auth, leads, analytics, applications, blogs
+│   │   ├── models/                      # User, Lead, Application, Visitor, Blog schemas
+│   │   ├── routes/                      # REST routes under /api/v1/
+│   │   ├── middlewares/                 # verifyJWT auth guard
+│   │   ├── utils/                       # ApiError, ApiResponse, asyncHandler
+│   │   ├── db/index.js                  # Mongoose connector with public DNS fallback
+│   │   ├── app.js                       # Express app, CORS & trust proxy configuration
+│   │   ├── index.js                     # Server entry point (default port 5000/8000)
+│   │   └── seed.js                      # Admin user creation & MongoDB blog seeder
+│   ├── .env.example                     # Backend environment template
+│   └── package.json                     # Server dependencies
 │
-├── lib/
-│   └── data.js                  # All static data as ES module exports
-│
-├── public/
-│   ├── assets/
-│   │   ├── Brand Logos SVG/     # 8 self-hosted marquee brand logos
-│   │   ├── Card-Sticker SVG/    # Stickers overlaying service cards
-│   │   ├── Cursor SVG/          # Custom cursor SVG states
-│   │   ├── Footer-Sticker SVG/  # 6 decorative footer stickers
-│   │   ├── Marquee-blob SVG/    # Blob + hand in marquee section
-│   │   ├── MotionCard SVG/      # Motion card blob + underline
-│   │   ├── Navbar SVG/          # Navbar blob + work icon
-│   │   └── VimeoHero SVG/       # Smiley, star, oval underline, mute blob
-│   └── fonts/
-│       ├── DMSans-VariableFont_opsz,wght.ttf
-│       └── Epilogue-VariableFont_wght.ttf
-│
-├── .gitignore
-├── jsconfig.json                # @/ import alias configuration
-├── next.config.mjs              # Next.js config with webpack @/ alias
-├── package.json
+├── .gitignore                           # Monorepo gitignore rules
+├── .env.example                         # Root/Frontend environment template
+├── render.yaml                          # Render Blueprint specification
+├── package.json                         # Root convenience workspace scripts
 └── README.md
 ```
 
 ---
 
-## 🎬 Animation Catalog
+## 🎨 Interactive Animations & Motion Design
 
-| Animation | Component | Type |
-|---|---|---|
-| **Inertia fling (cards)** | MotionCards | GSAP InertiaPlugin |
-| **Inertia fling (labels)** | MotionCards | GSAP InertiaPlugin |
-| **Page transition scribble** | TransitionScribble | GSAP Timeline |
-| **Card fan-out on hover** | ServiceCards | GSAP Elastic |
-| **Mobile card scroll stack** | ServiceCards | GSAP ScrollTrigger |
-| **SVG underline draw** | ServiceCards | GSAP stroke animation |
-| **Marquee infinite scroll** | DoubleMarquee | CSS Keyframes |
-| **Marquee SVG reveal** | DoubleMarquee | GSAP ScrollTrigger |
-| **Sticker scroll pop-up** | Footer | GSAP ScrollTrigger + back.out |
-| **Sticker proximity push** | Footer | GSAP Elastic |
-| **Credits pop-out/collapse** | Footer | GSAP Timeline |
-| **Map link draw** | Footer | GSAP stroke animation |
-| **Cursor bubble follow** | CursorBubble | GSAP quickTo |
-| **Mute bubble follow** | VimeoHero | GSAP quickTo |
-| **Wiggle on hover** | Navbar, Footer | GSAP steps(1) yoyo |
-| **Horizontal scroll & pin**| HorizontalWords | GSAP ScrollTrigger |
-| **Letter & sticker bounce**| HorizontalWords | GSAP Elastic (Scroll) |
-| **SVG arrow draw** | HorizontalWords | GSAP stroke animation |
-| **Lenis smooth scroll** | SmoothScroll | Lenis + GSAP ticker |
-| **Tab title change** | SmoothScroll | Visibility API |
+* **GSAP InertiaPlugin Fling**: Motion cards and floating tags calculate pointer velocity; on mouse release, elements fling outward with realistic momentum and snap back elastically.
+* **Horizontal Pin & Letter Bounce**: Pinned viewport section that translates text horizontally while triggering elastic vertical bounces on characters and stickers.
+* **Service Card Fan-Out**: Five service deck cards expand horizontally on hover using GSAP elastic physics with hovered card zoom.
+* **Trusted Clients Marquee**: Continuous, hardware-accelerated horizontal brand ticker displaying partner client badges with edge-fade gradient masks and pause-on-hover.
+* **Proximity Sticker Push**: Footer sticker badges react to rapid cursor movements with displacement proportional to velocity before springing back.
+* **Fullscreen Transition Scribble**: SVG mask animation that draws over the viewport on logo click, selects a randomized theme color, and scrolls to top.
+* **Contextual Cursor Bubble**: Spring-damped cursor follower with text state switching (`view`, `click`, `drag`).
+* **Dynamic Tab Title**: Changes browser tab title to `"Hey, over here! 👀"` when visibility changes.
 
 ---
 
-## 📊 `lib/data.js` — Centralized Data
+## 🌐 API Endpoints Reference
 
-All static data lives in `lib/data.js` as named ES module exports:
+Base URL: `http://localhost:5000/api/v1` (or your live Render URL + `/api/v1`)
 
-| Export | Purpose |
-|---|---|
-| `brands[]` | 8 brand objects `{ name, src }` pointing to `/public/assets/` |
-| `colors[]` | Background colour pool for the marquee |
-| `SOCIAL_ICONS[]` | LinkedIn, Instagram, TikTok — href + SVG markup |
-| `CARDS_DATA[]` | 5 service card definitions with color, sticker, title, services |
-| `WIGGLE_CONFIG` | Single source of truth for all hover-wiggle intensities |
-| `ANIMATION_CONFIG` | Scribble transition timing and stroke width settings |
+### 1. Authentication (`/api/v1/auth`)
+* `POST /login` — Authenticate admin; sets `HttpOnly` JWT access/refresh cookies.
+* `POST /logout` — Invalidate session and clear auth cookies.
+* `POST /refresh-token` — Issue a new access token via refresh token.
+* `GET /current-user` — Retrieve current authenticated user profile *(Protected)*.
 
-### `WIGGLE_CONFIG` — Tune all wiggles from one place
+### 2. Leads CRM (`/api/v1/leads`)
+* `POST /` — Public endpoint to submit client consultation inquiry.
+* `GET /` — Fetch all inquiries with optional status filter (`new`, `contacted`, `in-progress`, `closed`) *(Protected)*.
+* `PATCH /:id/status` — Update inquiry status or internal follow-up notes *(Protected)*.
+* `DELETE /:id` — Delete inquiry record *(Protected)*.
 
-```js
-export const WIGGLE_CONFIG = {
-    logoTruus:  4,  // The navbar Truus logo
-    socials:    5,  // LinkedIn / Instagram / TikTok icons
-    jobHeading: 1,  // "not hiring right now" heading
-    googleMap:  1,  // Google Maps link text
-    email:      1,  // hello@truus.co
-    whatsapp:   1,  // send us a whatsapp
-};
+### 3. Analytics & Tracking (`/api/v1/analytics`)
+* `POST /track` — Ingest visitor device ID, browser, OS, city/country, referrer, and dwell time.
+* `GET /stats` — Retrieve aggregate KPI metrics for dashboard cards *(Protected)*.
+
+### 4. Career Applications (`/api/v1/applications`)
+* `POST /` — Public endpoint to submit job application, resume link, and portfolio.
+* `GET /` — List received applications *(Protected)*.
+
+### 5. Blogs (`/api/v1/blogs`)
+* `GET /` — Retrieve all published blog articles.
+* `GET /:slug` — Retrieve single blog article by slug.
+
+---
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+* **Node.js** v18+ installed
+* **MongoDB** connection string (local or MongoDB Atlas)
+
+### 1. Installation
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/Harsh-Yadav029/FitScalez-main.git
+cd FitScalez-main
+
+# Install frontend dependencies
+cd client && npm install
+
+# Install backend dependencies
+cd ../server && npm install
+cd ..
 ```
 
-Higher number = more rotation (degrees). Set to `0` to disable for any element.
+### 2. Environment Variables
+
+Create `server/.env`:
+```env
+PORT=5000
+NODE_ENV=development
+MONGODB_URI=your_mongodb_connection_string
+CORS_ORIGIN=http://localhost:3000
+ACCESS_TOKEN_SECRET=your_super_secret_access_key
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=your_super_secret_refresh_key
+REFRESH_TOKEN_EXPIRY=10d
+```
+
+Create `client/.env`:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api/v1
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+### 3. Seed Database
+Initialize default admin credentials (`admin` / `adminpassword123`) and import 14 SEO articles:
+```bash
+npm run seed
+# or: cd server && npm run seed
+```
+
+### 4. Run Development Servers
+From the root directory:
+```bash
+# Run Next.js frontend (http://localhost:3000)
+npm run dev
+
+# Run Express backend in a second terminal (http://localhost:5000)
+npm run dev:server
+```
 
 ---
 
-## 🎲 Marquee Randomisation Logic
+## ☁️ Deployment Guide
 
-The marquee uses two constraint-aware helpers in `components/DoubleMarquee.jsx`:
+### Deploy Backend on Render
+1. Create a **New Web Service** connected to your repository on [Render](https://dashboard.render.com).
+2. Configure settings:
+   * **Root Directory**: `server`
+   * **Build Command**: `npm install`
+   * **Start Command**: `node src/index.js`
+   * **Health Check Path**: `/health`
+3. Add Environment Variables:
+   * `NODE_ENV`: `production`
+   * `PORT`: `10000`
+   * `MONGODB_URI`: *Your MongoDB Atlas connection URI*
+   * `CORS_ORIGIN`: `https://*.vercel.app,http://localhost:3000`
+   * `ACCESS_TOKEN_SECRET`: *Random secure string*
+   * `ACCESS_TOKEN_EXPIRY`: `1d`
+   * `REFRESH_TOKEN_SECRET`: *Random secure string*
+   * `REFRESH_TOKEN_EXPIRY`: `10d`
+4. Deploy and copy your service URL (e.g., `https://fitscalez-server.onrender.com`).
 
-- **`shuffleNoAdjacentSrc(brands)`** — Fisher-Yates shuffle + post-processing to ensure no two cards with the same logo appear next to each other, **including at the loop seam**.
-- **`assignColorsNoAdjacent(count, colors)`** — Assigns background colours one-by-one, always excluding the previous colour (and the first colour on the last item, to fix the seam).
-
----
-
-## 🎨 SVG Architecture
-
-All SVGs are handled using one of three strategies:
-
-| Strategy | Used For | Why |
-|---|---|---|
-| External `.svg` + `<img>` | Brand logos, stickers, blobs, decorative shapes | Clean components; best for large, non-reused shapes |
-| Inline `<symbol>` + `<use>` | Repeated icons (`bullet-icon`, `card-divider`) | Defined once in `SvgSymbols.jsx`, rendered many times; supports `currentColor` |
-| Inline `<svg>` | Animated paths (map link draw, control icons) | Required for `stroke-dasharray` animations and React state-driven rendering |
-
-### SVG Asset Folders
-
-| Folder | Contents |
-|---|---|
-| `Brand Logos SVG/` | 8 marquee brand logos |
-| `Card-Sticker SVG/` | 5 stickers for service cards |
-| `Cursor SVG/` | Custom cursor states |
-| `Footer-Sticker SVG/` | 6 decorative footer stickers |
-| `Marquee-blob SVG/` | Blob + pointing hand |
-| `MotionCard SVG/` | Blue blob + wavy underline |
-| `Navbar SVG/` | Navbar blob + work icon |
-| `VimeoHero SVG/` | Smiley face, pink star, oval underline, mute blob |
-
----
-
-## ⚙️ Setup & Installation
-
-This project uses Next.js, so you need Node.js installed.
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Thakuma07/Truus.co-Awwward-Website.git
-   cd truus
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in your browser**:
-   ```
-   http://localhost:3000
-   ```
+### Deploy Frontend on Vercel
+1. Import repository on [Vercel](https://vercel.com/new).
+2. Configure settings:
+   * **Framework Preset**: `Next.js` *(Auto-detected)*
+   * **Root Directory**: `client` ⚠️ *(Click "Edit" and choose `client`)*
+   * **Build Command**: `next build`
+3. Add Environment Variables:
+   * `NEXT_PUBLIC_API_URL`: `https://fitscalez-server.onrender.com/api/v1` *(Your live Render URL + `/api/v1`)*
+   * `NEXT_PUBLIC_SITE_URL`: `https://your-domain.vercel.app`
+4. Click **Deploy**. All 30 routes will build automatically.
 
 ---
 
-## 👨‍💻 Developed By
+## 👥 Leadership Team & Agency Info
 
-Made with ❤️ by **Arkyadeep Pal**, **Soumyakanta Mitra** and **Anshu Ram**, powered by **Antigravity AI**.
+* **Fitscalez Agency**: 24, Shri Ram Road, Civil Lines, Delhi – 110054, India
+* **Hariom Saini** — *Founder & CEO*: Directs corporate partnerships, agency growth, and business expansion.
+* **Divyansh** — *Lead Web Developer*: Architecture of the full-stack MERN platform, GSAP animation engine, and Next.js applications.
+* **Ms. Anshul Sharma** — *Partner & Strategy Director*: Oversees brand positioning, performance advertising, and organic search campaigns.
 
-## 📄 License
-
-This project is for educational and portfolio purposes. All original brand assets belong to Truus.co.
-#   F i t S c a l e z - m a i n  
- #   F i t S c a l e z - m a i n  
- 
+## 📄 License & Credits
+© 2024 Fitscalez. All rights reserved.
+Built for high-scale digital performance.
