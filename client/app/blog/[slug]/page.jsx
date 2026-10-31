@@ -16,14 +16,32 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const article = articles.find((a) => a.slug === slug);
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fitscalez.vercel.app';
 
     if (!article) {
-        return { title: 'Article Not Found | Fitscalez' };
+        return { title: 'Article Not Found' };
     }
 
     return {
-        title: `${article.metaTitle || article.title} | Fitscalez`,
+        title: article.metaTitle || article.title,
         description: article.metaDesc || article.summary,
+        keywords: [article.primaryKeyword, article.secondaryKeywords, article.category].filter(Boolean),
+        alternates: {
+            canonical: `/blog/${article.slug}`,
+        },
+        openGraph: {
+            title: article.metaTitle || article.title,
+            description: article.metaDesc || article.summary,
+            url: `${siteUrl}/blog/${article.slug}`,
+            type: 'article',
+            publishedTime: article.date,
+            authors: [article.author || 'Divyansh'],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: article.metaTitle || article.title,
+            description: article.metaDesc || article.summary,
+        },
     };
 }
 
@@ -35,8 +53,35 @@ export default async function BlogPostPage({ params }) {
         notFound();
     }
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fitscalez.vercel.app';
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: article.title,
+        description: article.summary || article.metaDesc,
+        author: {
+            '@type': 'Person',
+            name: article.author || 'Divyansh',
+            jobTitle: article.authorRole || 'Lead Web Developer',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Fitscalez',
+            logo: {
+                '@type': 'ImageObject',
+                url: `${siteUrl}/assets/fitscalez/logo.png`,
+            },
+        },
+        datePublished: article.date,
+        mainEntityOfPage: `${siteUrl}/blog/${article.slug}`,
+    };
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
             <SvgSymbols />
             <SmoothScroll />
             <CursorBubble />
