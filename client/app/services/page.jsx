@@ -33,25 +33,12 @@ export default function ServicesPage() {
                 </section>
 
                 {/* Service Cards Grid */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 40px 80px' }}>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px',
-                        marginBottom: '80px'
-                    }}>
+                <section className="services-grid-section">
+                    <div className="services-grid">
                         {CARDS_DATA.map((card) => (
                             <div
                                 key={card.title}
-                                style={{
-                                    background: '#fff',
-                                    border: '3px solid #000',
-                                    borderRadius: '24px',
-                                    padding: '36px 30px',
-                                    boxShadow: '8px 8px 0px #000',
-                                    display: 'flex',
-                                    flexDirection: 'column'
-                                }}
+                                className="services-card-item"
                             >
                                 <div style={{
                                     display: 'inline-block',
@@ -106,12 +93,7 @@ export default function ServicesPage() {
                         </p>
                     </div>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px',
-                        marginBottom: '100px'
-                    }}>
+                    <div className="pricing-grid">
                         {PRICING_PACKAGES.map((pkg) => (
                             <div
                                 key={pkg.title}

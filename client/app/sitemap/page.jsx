@@ -31,13 +31,11 @@ export default function SitemapPage() {
                     </p>
                 </section>
 
-                <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 40px 100px' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginBottom: '50px' }}>
+                <section className="sitemap-content-section">
+                    <div className="sitemap-grid">
                         {/* Main Pages */}
-                        <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '36px 30px' }}>
-                            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '20px', borderBottom: '2px solid #000', paddingBottom: '10px' }}>
-                                🧭 Primary Navigation
-                            </h2>
+                        <div className="sitemap-card">
+                            <h2>🧭 Primary Navigation</h2>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 <li><a href="/" style={{ color: '#000', fontWeight: 600, textDecoration: 'none' }}>→ Home (Agency Overview)</a></li>
                                 <li><a href="/about" style={{ color: '#000', fontWeight: 600, textDecoration: 'none' }}>→ About Us &amp; Leadership</a></li>
@@ -50,10 +48,8 @@ export default function SitemapPage() {
                         </div>
 
                         {/* Legal & Machine Readable */}
-                        <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '36px 30px' }}>
-                            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '20px', borderBottom: '2px solid #000', paddingBottom: '10px' }}>
-                                ⚖️ Legal &amp; Compliance
-                            </h2>
+                        <div className="sitemap-card">
+                            <h2>⚖️ Legal &amp; Compliance</h2>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 <li><a href="/privacy-policy" style={{ color: '#000', fontWeight: 600, textDecoration: 'none' }}>→ Privacy Policy</a></li>
                                 <li><a href="/terms-of-service" style={{ color: '#000', fontWeight: 600, textDecoration: 'none' }}>→ Terms of Service</a></li>
@@ -63,10 +59,8 @@ export default function SitemapPage() {
                         </div>
 
                         {/* Case Studies */}
-                        <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '36px 30px' }}>
-                            <h2 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '20px', borderBottom: '2px solid #000', paddingBottom: '10px' }}>
-                                🚀 Featured Client Works
-                            </h2>
+                        <div className="sitemap-card">
+                            <h2>🚀 Featured Client Works</h2>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 {CASE_STUDIES.map((cs) => (
                                     <li key={cs.id}>
@@ -80,11 +74,9 @@ export default function SitemapPage() {
                     </div>
 
                     {/* Blog Articles Full Index */}
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px' }}>
-                        <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '24px', borderBottom: '2px solid #000', paddingBottom: '12px' }}>
-                            📚 Engineering &amp; Growth Articles ({articles.length} Guides)
-                        </h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+                    <div className="sitemap-card">
+                        <h2>📚 Engineering &amp; Growth Articles ({articles.length} Guides)</h2>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
                             {articles.map((art) => (
                                 <a
                                     key={art.slug}

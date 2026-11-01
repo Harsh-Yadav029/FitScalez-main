@@ -175,6 +175,41 @@
     z-index: 10;
 }
 
+.footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    pointer-events: auto;
+    margin-bottom: -8px;
+    color: var(--color-white);
+}
+
+.footer-legal-copy {
+    font-size: 0.82rem;
+    opacity: 0.85;
+    font-weight: 500;
+    font-family: "Epilogue", Arial, sans-serif;
+}
+
+.footer-legal-dot {
+    opacity: 0.35;
+}
+
+.footer-legal-link {
+    color: inherit;
+    font-size: 0.82rem;
+    opacity: 0.75;
+    text-decoration: none;
+    font-family: "Epilogue", Arial, sans-serif;
+    transition: opacity 0.2s ease;
+}
+
+.footer-legal-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
 .footer-url {
     display: none;
 }

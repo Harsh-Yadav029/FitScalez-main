@@ -6,7 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SOCIAL_ICONS, WIGGLE_CONFIG, AGENCY_INFO } from '@/lib/data';
 
 function initWiggle(element, intensity) {
+    if (!element) return () => {};
     const target = element.querySelector('[data-wiggle-target]') || element;
+    if (!target) return () => {};
     gsap.set(target, { transformOrigin: 'center center' });
     let tween;
     const onEnter = () => { tween = gsap.to(target, { rotation: intensity, duration: 0.17, repeat: -1, yoyo: true, ease: 'steps(1)' }); };
@@ -226,14 +228,14 @@ export default function Footer() {
 
                 {/* Bottom row: credits & legal */}
                 <div className="footer-bottom-row">
-                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '14px', pointerEvents: 'auto', marginBottom: '-8px' }}>
-                        <span style={{ fontSize: '0.82rem', opacity: 0.85, fontWeight: 500 }}>&copy; 2024 Fitscalez. All rights reserved.</span>
-                        <span style={{ opacity: 0.35 }}>•</span>
-                        <a href="/privacy-policy" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Privacy Policy</a>
-                        <span style={{ opacity: 0.35 }}>•</span>
-                        <a href="/terms-of-service" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Terms of Service</a>
-                        <span style={{ opacity: 0.35 }}>•</span>
-                        <a href="/sitemap" style={{ color: 'inherit', fontSize: '0.82rem', opacity: 0.75, textDecoration: 'none' }}>Sitemap</a>
+                    <div className="footer-legal-links">
+                        <span className="footer-legal-copy">&copy; 2024 Fitscalez. All rights reserved.</span>
+                        <span className="footer-legal-dot">•</span>
+                        <a href="/privacy-policy" className="footer-legal-link">Privacy Policy</a>
+                        <span className="footer-legal-dot">•</span>
+                        <a href="/terms-of-service" className="footer-legal-link">Terms of Service</a>
+                        <span className="footer-legal-dot">•</span>
+                        <a href="/sitemap" className="footer-legal-link">Sitemap</a>
                     </div>
                     <div className="footer-credits-wrapper">
                         <div className="credits-box">

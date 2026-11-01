@@ -351,10 +351,10 @@ export default function Navbar() {
             <nav className="navbar">
                 <div className="nav-left" style={{ cursor: "url('/assets/Cursor SVG/cursor-pointer.svg') 12 12, pointer" }}>
                     <div className="nav-hover-trigger">
-                        <div className="logo-work-container">
+                        <a href="/projects" className="logo-work-container" aria-label="Our Work" style={{ textDecoration: 'none', color: 'inherit' }}>
                             <img src="/assets/Navbar SVG/nav-work-blob.svg" width="60" height="55" className="nav-bar__work-blob-svg" alt="" aria-hidden="true" />
                             <span className="logo-work-text">work</span>
-                        </div>
+                        </a>
 
                         {/* Pop-out Box for Left Side (Featured Projects) */}
                         <div className="nav-popout nav-work-box">
@@ -389,8 +389,8 @@ export default function Navbar() {
                 </div>
 
                 <div className="nav-center" style={{ cursor: "url('/assets/Cursor SVG/cursor-pointer.svg') 12 12, pointer" }}>
-                    <a href="/" className="logo-truus" aria-label="Fitscalez Home" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ fontFamily: 'Epilogue, sans-serif', fontWeight: 900, fontSize: '26px', letterSpacing: '-0.5px', textTransform: 'lowercase' }}>
+                    <a href="/" className="logo-truus" aria-label="Fitscalez Home">
+                        <span className="logo-truus-text">
                             fitscalez<span style={{ color: 'var(--color-pink)' }}>.</span>
                         </span>
                     </a>

@@ -56,9 +56,19 @@
 }
 
 .logo-truus {
-    display: block;
-    width: 150px;
-    height: auto;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+}
+
+.logo-truus-text {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
 }
 
 .logo-truus path,
@@ -607,13 +617,16 @@
     .nav-fullscreen-menu {
         padding: 24px;
     }
+
     .nav-fullscreen-body {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+
     .nav-fullscreen-sidebar {
         display: none;
     }
+
     .nav-menu-text {
         font-size: 2.2rem;
     }

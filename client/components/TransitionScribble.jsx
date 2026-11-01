@@ -82,15 +82,21 @@ export default function TransitionScribble() {
             drawTl.to(transitionLogo, {
                 autoAlpha: 1, duration: durIn * 0.5, ease: 'power2.out',
                 onStart: () => {
-                    gsap.to(transitionLogo.querySelector('svg'), { rotation: 5, duration: 0.15, repeat: -1, yoyo: true, ease: 'steps(1)', overwrite: 'auto' });
+                    const logoTarget = transitionLogo ? (transitionLogo.querySelector('svg') || transitionLogo.querySelector('.logo-text') || transitionLogo.firstElementChild || transitionLogo) : null;
+                    if (logoTarget) {
+                        gsap.to(logoTarget, { rotation: 5, duration: 0.15, repeat: -1, yoyo: true, ease: 'steps(1)', overwrite: 'auto' });
+                    }
                 }
             }, durIn * 0.5);
 
             drawTl.set(transitionLogo, {
                 autoAlpha: 0,
                 onComplete: () => {
-                    gsap.killTweensOf(transitionLogo.querySelector('svg'));
-                    gsap.set(transitionLogo.querySelector('svg'), { rotation: 0 });
+                    const logoTarget = transitionLogo ? (transitionLogo.querySelector('svg') || transitionLogo.querySelector('.logo-text') || transitionLogo.firstElementChild || transitionLogo) : null;
+                    if (logoTarget) {
+                        gsap.killTweensOf(logoTarget);
+                        gsap.set(logoTarget, { rotation: 0 });
+                    }
                 }
             }, durIn + (durOut * 0.48));
         };

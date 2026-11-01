@@ -30,16 +30,16 @@ export default function TermsOfServicePage() {
                     </p>
                 </section>
 
-                <section style={{ maxWidth: '960px', margin: '0 auto', padding: '0 40px 100px', lineHeight: 1.8, fontSize: '1.05rem', color: '#222' }}>
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px', marginBottom: '32px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>1. Agreement to Terms</h2>
+                <section className="legal-content-section">
+                    <div className="legal-card">
+                        <h2>1. Agreement to Terms</h2>
                         <p>
                             By engaging Fitscalez (&ldquo;Agency&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;) for web development, technical SEO, UI/UX design, or advertising campaigns, or by using this website, you agree to comply with and be bound by these Terms of Service. If you are entering into this agreement on behalf of a business entity, you confirm that you possess the authority to bind that entity.
                         </p>
                     </div>
 
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px', marginBottom: '32px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>2. Scope of Services &amp; Deliverables</h2>
+                    <div className="legal-card">
+                        <h2>2. Scope of Services &amp; Deliverables</h2>
                         <p style={{ marginBottom: '14px' }}>
                             Fitscalez provides custom digital engineering and marketing services according to agreed-upon project specifications, proposals, or Statements of Work (SOW):
                         </p>
@@ -51,8 +51,8 @@ export default function TermsOfServicePage() {
                         </ul>
                     </div>
 
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px', marginBottom: '32px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>3. Project Milestones &amp; Payment Terms</h2>
+                    <div className="legal-card">
+                        <h2>3. Project Milestones &amp; Payment Terms</h2>
                         <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             <li>Quotations provided in proposals are valid for 30 days from the date of issuance.</li>
                             <li>Standard project agreements typically follow a milestone-based payment structure (e.g. initial mobilization advance, milestone sign-off, and final deployment).</li>
@@ -61,8 +61,8 @@ export default function TermsOfServicePage() {
                         </ul>
                     </div>
 
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px', marginBottom: '32px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>4. Intellectual Property &amp; Ownership</h2>
+                    <div className="legal-card">
+                        <h2>4. Intellectual Property &amp; Ownership</h2>
                         <p style={{ marginBottom: '14px' }}>
                             Upon receipt of full and final payment for a custom development project, full ownership of client-specific custom source code, written copy, and design assets transfers to the client.
                         </p>
@@ -71,15 +71,15 @@ export default function TermsOfServicePage() {
                         </p>
                     </div>
 
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px', marginBottom: '32px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>5. Warranties &amp; Technical Support</h2>
+                    <div className="legal-card">
+                        <h2>5. Warranties &amp; Technical Support</h2>
                         <p style={{ marginBottom: '14px' }}>
                             Standard bespoke web platforms include 30 days of post-launch warranty support covering bug fixes and technical adjustments within the agreed scope of work. Ongoing server maintenance, hosting infrastructure fees, or third-party API subscription costs remain the responsibility of the client.
                         </p>
                     </div>
 
-                    <div style={{ background: '#fff', border: '3px solid #000', borderRadius: '24px', padding: '40px 36px' }}>
-                        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '16px' }}>6. Governing Law &amp; Jurisdiction</h2>
+                    <div className="legal-card">
+                        <h2>6. Governing Law &amp; Jurisdiction</h2>
                         <p style={{ marginBottom: '14px' }}>
                             These Terms and any contractual disputes shall be governed by and construed in accordance with the laws of India. Any legal action arising hereunder shall be subject to the exclusive jurisdiction of the competent courts located in Delhi, India.
                         </p>

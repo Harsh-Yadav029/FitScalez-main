@@ -7,6 +7,7 @@
     align-items: center;
     gap: 60px;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 /* ─── Left Panel ─────────────────────────────────────────────────────────── */

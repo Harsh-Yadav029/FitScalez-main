@@ -134,16 +134,12 @@ export default function AboutPage() {
                 </section>
 
                 {/* Leadership Section */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 100px', padding: '0 40px' }}>
+                <section className="subpage-grid-section">
                     <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '40px', textAlign: 'center' }}>
                         meet the leadership team
                     </h2>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '30px'
-                    }}>
+                    <div className="subpage-responsive-grid">
                         {LEADERSHIP_TEAM.map((member) => (
                             <div key={member.name} style={{
                                 background: '#fff',

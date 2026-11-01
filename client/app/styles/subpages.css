@@ -398,3 +398,167 @@
     margin-right: 12px;
 }
 
+/* ─── Legal & Sitemap Sections ─── */
+.legal-content-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #222;
+}
+
+.legal-card {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 24px;
+    padding: 40px 36px;
+    margin-bottom: 32px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.06);
+}
+
+.legal-card h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.sitemap-content-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.sitemap-card {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 24px;
+    padding: 36px 30px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.06);
+}
+
+.sitemap-card h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .legal-content-section,
+    .sitemap-content-section {
+        padding: 0 16px 60px;
+        font-size: 0.98rem;
+    }
+
+    .legal-card {
+        padding: 24px 18px;
+        border-radius: 18px;
+        margin-bottom: 20px;
+    }
+
+    .legal-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sitemap-card {
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+
+    .sitemap-card h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ─── Services & Pricing Grid Layout ─── */
+.services-grid-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.services-card-item {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 24px;
+    padding: 36px 30px;
+    box-shadow: 8px 8px 0px #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+    .services-grid-section {
+        padding: 0 16px 60px;
+    }
+
+    .services-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services-card-item {
+        padding: 24px 20px;
+        box-shadow: 5px 5px 0px #000;
+    }
+}
+
+/* ─── Global Subpage Grid Helpers ─── */
+.subpage-grid-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+}
+
+.subpage-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .subpage-grid-section {
+        padding: 0 16px 60px !important;
+    }
+
+    .subpage-responsive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}
+

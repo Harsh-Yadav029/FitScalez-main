@@ -77,12 +77,8 @@ export default function BlogPage() {
                 </section>
 
                 {/* Articles Grid */}
-                <section style={{ maxWidth: '1280px', margin: '0 auto 100px', padding: '0 40px' }}>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                        gap: '32px'
-                    }}>
+                <section className="subpage-grid-section">
+                    <div className="subpage-responsive-grid">
                         {filteredArticles.map((article) => (
                             <article key={article.slug} style={{
                                 background: '#fff',

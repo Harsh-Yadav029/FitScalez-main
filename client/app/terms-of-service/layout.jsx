@@ -9,3 +9,4 @@ export const metadata = {
 export default function TermsOfServiceLayout({ children }) {
     return <>{children}</>;
 }
+

@@ -160,8 +160,8 @@ const HorizontalWords = () => {
 
             <div className="horizontal-words__bottom-text">
                 <div className="horizontal-words__bottom-text-l">
-                    Audiences are more scattered <em>and</em> more reachable<br />
-                    than ever. We help businesses become market leaders<br />
+                    Audiences are more scattered <em>and</em> more reachable<span className="desktop-break"><br /></span>{' '}
+                    than ever. We help businesses become market leaders<span className="desktop-break"><br /></span>{' '}
                     with custom MERN engineering and data-driven marketing.
                 </div>
             </div>

@@ -52,62 +52,94 @@
   margin: 0;
 }
 
-/* ─── Card Color Variants ────────────────────────────────────────────────── */
+/* ─── Card Color Variants (All Viewports) ─────────────────────────── */
 .card-green {
   background-color: var(--color-green);
-  left: calc(
-    50% - 650px
-  ); /* Adjusted to -650px to better center the first card */
-  top: 50px;
-  transform: rotate(4deg);
   z-index: 1;
 }
 
 .card-darkblue {
   background-color: var(--color-lightblue);
   color: var(--color-dark);
-  left: calc(50% - 430px);
-  top: 100px;
-  transform: rotate(-5deg);
   z-index: 2;
 }
 
 .card-orange {
   background-color: var(--color-orange);
   color: var(--color-dark);
-  left: calc(50% - 220px);
-  top: 20px;
-  transform: rotate(5deg);
   z-index: 3;
 }
 
 .card-maroon {
   background-color: var(--color-maroon);
-  left: calc(50% + 50px);
-  top: 30px;
-  transform: rotate(-8deg);
   z-index: 4;
 }
 
 .card-pink {
   background-color: var(--color-pink);
   color: var(--color-dark);
-  left: calc(50% + 320px);
-  top: 70px;
-  transform: rotate(5deg);
   z-index: 5;
 }
 
-/* Expand hit area for middle cards to bridge gaps */
-.card-darkblue::after,
-.card-orange::after,
-.card-maroon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -35px;
-  right: -35px;
+/* ─── Desktop Fan Cluster (Only for screens >= 1025px) ────────────── */
+@media (min-width: 1025px) {
+  .cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 650px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    position: absolute;
+    width: 320px;
+    height: 460px;
+  }
+
+  .card-green {
+    left: calc(50% - 650px);
+    top: 50px;
+    transform: rotate(4deg);
+  }
+
+  .card-darkblue {
+    left: calc(50% - 430px);
+    top: 100px;
+    transform: rotate(-5deg);
+  }
+
+  .card-orange {
+    left: calc(50% - 220px);
+    top: 20px;
+    transform: rotate(5deg);
+  }
+
+  .card-maroon {
+    left: calc(50% + 50px);
+    top: 30px;
+    transform: rotate(-8deg);
+  }
+
+  .card-pink {
+    left: calc(50% + 320px);
+    top: 70px;
+    transform: rotate(5deg);
+  }
+
+  /* Expand hit area for middle cards to bridge gaps */
+  .card-darkblue::after,
+  .card-orange::after,
+  .card-maroon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -35px;
+    right: -35px;
+  }
 }
 
 /* Light card divider overrides */

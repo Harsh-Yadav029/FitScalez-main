@@ -84,13 +84,8 @@ export default function ContactPage() {
                     </p>
                 </section>
 
-                <section style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 40px 100px' }}>
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '50px',
-                        alignItems: 'start'
-                    }}>
+                <section className="subpage-grid-section">
+                    <div className="subpage-responsive-grid" style={{ alignItems: 'start' }}>
                         {/* Contact Form Card */}
                         <div style={{
                             background: '#fff',

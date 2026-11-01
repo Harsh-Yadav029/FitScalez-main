@@ -17,10 +17,10 @@
 
 .motion-card__title {
     font-family: 'Epilogue', sans-serif;
-    font-size: 7rem;
+    font-size: clamp(2.3rem, 7.5vw, 7rem);
     font-weight: 750;
-    line-height: 0.9;
-    letter-spacing: -5px;
+    line-height: 0.95;
+    letter-spacing: -2px;
     color: var(--color-dark);
     margin-bottom: 0;
     cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
@@ -30,13 +30,13 @@
     font-family: 'Times New Roman', 'Georgia', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 7.5rem;
+    font-size: clamp(2.4rem, 8vw, 7.5rem);
     line-height: 1.15;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     color: var(--color-dark);
     position: relative;
     display: inline-block;
-    top: -30px;
+    top: -15px;
 }
 
 /* SVG sticker placeholder (top-right of subtitle) */
@@ -230,4 +230,80 @@
     color: var(--color-dark);
     letter-spacing: -0.2px;
     cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+@media (max-width: 768px) {
+    .motion-card-section {
+        padding: 80px 16px 60px;
+    }
+
+    .motion-card__heading {
+        margin: 0 auto 30px;
+    }
+
+    .motion-card__title {
+        letter-spacing: -1px;
+    }
+
+    .motion-card__subtitle {
+        top: -6px;
+        letter-spacing: -0.5px;
+    }
+
+    .motion-card__sticker--top {
+        width: 90px;
+        height: 50px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .motion-card__underline-svg {
+        margin: -20px auto 0;
+        max-width: 90%;
+    }
+
+    .motion-card__cards-area {
+        height: 340px;
+        margin: 20px auto 30px;
+    }
+
+    .motion-card__blob {
+        width: 280px;
+        height: 250px;
+        transform: translate(-50%, -50%);
+    }
+
+    .motion-card__card {
+        width: 72px;
+        height: 96px;
+    }
+
+    .motion-card__floating-text {
+        font-size: 0.72rem;
+    }
+
+    .motion-card__floating-label {
+        padding: 3px 8px;
+    }
+
+    .motion-card__floating-label--pink {
+        top: 15%;
+        left: 28%;
+    }
+
+    .motion-card__floating-label--orange {
+        top: 86%;
+        left: 50%;
+    }
+
+    .motion-card__floating-label--red {
+        top: 36%;
+        left: 64%;
+    }
+
+    .motion-card__description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
 }
