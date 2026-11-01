@@ -5,16 +5,14 @@ import { Application } from "../models/application.model.js";
 
 // submit job application from careers page (public)
 const createApplication = asyncHandler(async (req, res) => {
-    const {
-        fullName,
-        email,
-        phone,
-        role,
-        experience,
-        portfolioUrl,
-        resumeUrl,
-        coverNote
-    } = req.body;
+    const fullName = req.body.fullName || req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const role = req.body.role;
+    const experience = req.body.experience;
+    const portfolioUrl = req.body.portfolioUrl || req.body.portfolioLink;
+    const resumeUrl = req.body.resumeUrl || req.body.resumeLink;
+    const coverNote = req.body.coverNote;
 
     if (!fullName || !email || !phone || !role) {
         throw new ApiError(400, "Full name, email, phone, and role are required");
